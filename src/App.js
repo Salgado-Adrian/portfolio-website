@@ -9,41 +9,24 @@ const scrollToSection = (id) => {
 const App = () => {
   return (
     <div>
-      <NameBanner />
+      {/* Move NameBanner to a better position */}
+      <div style={styles.nameBanner}>
+        <NameBanner />
+      </div>
 
       {/* Navigation Links for Scrolling */}
       <nav style={styles.nav}>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => scrollToSection("home")}
-        >
-          Home
-        </motion.button>
-
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => scrollToSection("about")}
-        >
-          About
-        </motion.button>
-
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => scrollToSection("projects")}
-        >
-          Projects
-        </motion.button>
-
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => scrollToSection("contact")}
-        >
-          Contact
-        </motion.button>
+        {["home", "about", "projects", "contact"].map((section) => (
+          <motion.button
+            key={section}
+            whileHover={{ scale: 1.1, backgroundColor: "red", color: "white" }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => scrollToSection(section)}
+            style={styles.navButton}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </motion.button>
+        ))}
       </nav>
 
       {/* Sections */}
@@ -66,10 +49,20 @@ const App = () => {
   );
 };
 
+/* Updated Styles */
 const styles = {
+  nameBanner: {
+    position: "absolute",
+    top: "10px",
+    left: "20px",
+    fontSize: "24px",
+    fontWeight: "bold",
+    color: "red",
+    textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+  },
   nav: {
     position: "fixed",
-    top: "10px",
+    top: "50px",
     left: "50%",
     transform: "translateX(-50%)",
     backgroundColor: "white",
@@ -79,6 +72,17 @@ const styles = {
     display: "flex",
     gap: "15px",
     textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+  },
+  navButton: {
+    backgroundColor: "transparent",
+    border: "none",
+    fontSize: "18px",
+    fontWeight: "bold",
+    color: "black",
+    cursor: "pointer",
+    textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
+    padding: "5px 10px",
+    transition: "background-color 0.3s ease, color 0.3s ease",
   },
 };
 

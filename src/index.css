@@ -14,3 +14,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+nav {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  z-index: 1000;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px; /* Make the text larger */
+  font-weight: bold;
+}
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: red;
+  margin-right: 20px; /* Space between logo and links */
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  text-shadow: none;
+  letter-spacing: 1px; /* Adds better spacing */
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: red;
+}
