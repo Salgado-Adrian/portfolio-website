@@ -7,18 +7,25 @@ const NameBanner = () => {
     </div>
   );
 };
-
 const styles = {
-  banner: {
-    position: 'fixed', // Always visible
-    top: '10px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    backgroundColor: 'rgba(0, 0, 0, 0.8)', // Slight dark background for contrast
-    padding: '10px 20px',
-    borderRadius: '8px',
-    zIndex: 1000
-  },
+    banner: {
+      position: 'fixed',
+      top: '15px',
+      left: '20px',
+      fontSize: '52px', // Large & visible
+      fontWeight: 'bold',
+      fontFamily: 'Montserrat, sans-serif',
+      zIndex: 1000,
+      background: 'linear-gradient(45deg, #D32F2F, #FF5252, #FF8A80)', // Red gradient
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      display: 'inline-block',
+      textShadow: '2px 2px 5px rgba(0, 0, 0, 0.2)', // Light shadow for depth
+    },
+  
+  
+  
+
   text: {
     color: '#4CAF50', // Your requested green
     fontFamily: 'Montserrat, sans-serif',
