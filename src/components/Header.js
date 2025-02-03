@@ -1,28 +1,54 @@
-import React from 'react';
+import React from "react";
 
 const Header = () => {
   return (
-    <header style={styles.header}>
-      <h1 style={styles.title}>My Portfolio</h1>
-    </header>
+    <nav style={styles.nav}>
+      <button style={styles.button} onClick={() => scrollToSection("home")}>
+        Home
+      </button>
+      <button style={styles.button} onClick={() => scrollToSection("about")}>
+        About
+      </button>
+      <button style={styles.button} onClick={() => scrollToSection("projects")}>
+        Projects
+      </button>
+      <button style={styles.button} onClick={() => scrollToSection("contact")}>
+        Contact
+      </button>
+    </nav>
   );
 };
 
+// Scroll to section function
+const scrollToSection = (id) => {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+};
+
+// Styling
 const styles = {
-  header: {
-    backgroundColor: '#4CAF50',
-    color: 'white',
-    padding: '10px 20px',
-    textAlign: 'center',
-    borderRadius: '10px',
-    width: 'fit-content',
-    margin: 'auto',
-    boxShadow: '0px 4px 6px rgba(0,0,0,0.2)'
+  nav: {
+    position: "fixed",
+    top: "50%", // Centered vertically
+    left: "20px", // Move it to the left side
+    transform: "translateY(-50%)", // Centering effect
+    backgroundColor: "white",
+    padding: "15px",
+    borderRadius: "8px",
+    zIndex: 1000,
+    display: "flex",
+    flexDirection: "column", // Stack buttons vertically
+    gap: "15px",
+    boxShadow: "0px 4px 8px rgba(0,0,0,0.2)",
   },
-  title: {
-    fontSize: '24px',
-    fontWeight: 'bold'
-  }
+  button: {
+    background: "transparent",
+    border: "none",
+    fontSize: "16px",
+    fontWeight: "bold",
+    cursor: "pointer",
+    transition: "color 0.3s ease",
+    padding: "10px",
+  },
 };
 
 export default Header;
