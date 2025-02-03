@@ -17,7 +17,7 @@ const App = () => {
       <section id="about" className="section" style={styles.section}>
         <h1>About Me</h1>
         <p>
-          I am a <strong>sophomore Computer Science student at the University of Central Florida (UCF)</strong>
+          <strong>Sophomore Computer Science student at the University of Central Florida (UCF) </strong>
           with a passion for <strong>software development and problem-solving</strong>. My curiosity about how technology evolves and impacts our future
           drives me to continuously learn and improve my skills.
         </p>
