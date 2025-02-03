@@ -1,0 +1,11 @@
+.about-container {
+    text-align: center;
+    padding: 50px;
+    margin-top: -80px; /* ⬅️ Reduce gap */
+  }
+  
+  .highlight {
+    color: #ff4d4d; /* ✅ Red highlights */
+    font-weight: bold;
+  }
+  

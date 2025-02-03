@@ -1,54 +1,56 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <nav style={styles.nav}>
-      <button style={styles.button} onClick={() => scrollToSection("home")}>
-        Home
-      </button>
-      <button style={styles.button} onClick={() => scrollToSection("about")}>
-        About
-      </button>
-      <button style={styles.button} onClick={() => scrollToSection("projects")}>
-        Projects
-      </button>
-      <button style={styles.button} onClick={() => scrollToSection("contact")}>
-        Contact
-      </button>
-    </nav>
+    <header style={styles.header}>
+      <nav style={styles.nav}>
+        {["Home", "About", "Projects", "Contact"].map((section) => (
+          <motion.button
+            key={section}
+            whileHover={{ scale: 1.1, color: "#ff4d4d" }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => scrollToSection(section.toLowerCase())}
+            style={styles.button}
+          >
+            {section}
+          </motion.button>
+        ))}
+      </nav>
+    </header>
   );
 };
 
-// Scroll to section function
-const scrollToSection = (id) => {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-};
-
-// Styling
+// ✅ Remove Background & Box Shadow
 const styles = {
-  nav: {
+  header: {
     position: "fixed",
-    top: "50%", // Centered vertically
-    left: "20px", // Move it to the left side
-    transform: "translateY(-50%)", // Centering effect
-    backgroundColor: "white",
-    padding: "15px",
-    borderRadius: "8px",
+    top: "15px",
+    left: "15px",
     zIndex: 1000,
+    background: "none", // ✅ Remove background
+    padding: "0", // ✅ Remove padding
+    borderRadius: "0", // ✅ Remove rounded corners
+    boxShadow: "none", // ✅ Remove box shadow
+  },
+  nav: {
     display: "flex",
-    flexDirection: "column", // Stack buttons vertically
-    gap: "15px",
-    boxShadow: "0px 4px 8px rgba(0,0,0,0.2)",
+    gap: "20px",
   },
   button: {
-    background: "transparent",
     border: "none",
+    background: "none",
     fontSize: "16px",
     fontWeight: "bold",
     cursor: "pointer",
-    transition: "color 0.3s ease",
-    padding: "10px",
   },
+};
+
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
 };
 
 export default Header;
