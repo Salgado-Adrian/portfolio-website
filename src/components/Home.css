@@ -7,6 +7,20 @@
   text-align: center;
   padding-top: 40px; /* Add padding to push it up */
 }
+.scroll-down {
+  margin-top: 30px;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
 
 .content {
   max-width: 800px;
@@ -51,6 +65,29 @@ p {
   border: 2px solid #ff4d4d;
   color: #ff4d4d;
 }
+.buttons {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically if needed */
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
 
 .profile-pic {
   width: 180px;
