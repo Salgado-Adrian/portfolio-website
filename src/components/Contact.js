@@ -24,9 +24,13 @@ const Contact = () => {
 
 const styles = {
   container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end", // Moves content to the bottom
+    alignItems: "center",
     textAlign: "center",
-    padding: "50px",
-    maxWidth: "800px",
+    height: "80vh", // Adjusts height so the section is not too long
+    padding: "50px 20px",
     margin: "auto",
   },
   title: {
@@ -37,7 +41,7 @@ const styles = {
   description: {
     fontSize: "16px",
     marginBottom: "20px",
-    color: "#333",
+    color: "#ccc",
   },
   linksContainer: {
     display: "flex",
