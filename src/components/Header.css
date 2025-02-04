@@ -1,0 +1,77 @@
+/* ✅ Navbar Global Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* ✅ Mobile Menu Button */
+  .menu-button {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+  }
+  
+  .icon {
+    font-size: 28px;
+  }
+  
+  /* ✅ Desktop Navbar */
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .nav-button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* ✅ Mobile Navbar */
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+  
+    .nav {
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background-color: #111;
+      padding-top: 60px;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+    }
+  
+    .nav-open {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .nav-closed {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  

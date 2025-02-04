@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./Header.css";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false); // Toggle mobile menu
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // ✅ Update Mobile State on Resize
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <header style={styles.header}>
+    <header className="header">
       {/* ✅ Mobile Menu Button */}
-      <div style={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FaTimes style={styles.icon} /> : <FaBars style={styles.icon} />}
-      </div>
+      {isMobile && (
+        <div className="menu-button" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <FaTimes className="icon" /> : <FaBars className="icon" />}
+        </div>
+      )}
 
       {/* ✅ Navbar */}
-      <nav style={{ ...styles.nav, ...(isOpen ? styles.navOpen : {}) }}>
+      <nav className={`nav ${isOpen ? "nav-open" : "nav-closed"}`}>
         {["Home", "About", "Projects", "Contact"].map((section) => (
           <motion.button
             key={section}
@@ -23,7 +34,7 @@ const Header = () => {
               scrollToSection(section.toLowerCase());
               setIsOpen(false); // Close menu on mobile after clicking
             }}
-            style={styles.button}
+            className="nav-button"
           >
             {section}
           </motion.button>
@@ -31,53 +42,6 @@ const Header = () => {
       </nav>
     </header>
   );
-};
-
-// ✅ **Styles for Both Desktop & Mobile**
-const styles = {
-  header: {
-    position: "fixed",
-    top: "15px",
-    left: "15px",
-    zIndex: 1000,
-  },
-  menuButton: {
-    display: "none", // Hide by default (for desktop)
-    fontSize: "24px",
-    cursor: "pointer",
-    color: "white",
-    position: "fixed",
-    top: "15px",
-    left: "15px",
-    zIndex: 1100,
-  },
-  icon: {
-    fontSize: "28px",
-  },
-  nav: {
-    display: "flex",
-    gap: "20px",
-  },
-  button: {
-    border: "none",
-    background: "none",
-    fontSize: "16px",
-    fontWeight: "bold",
-    color: "white",
-    cursor: "pointer",
-    transition: "0.3s",
-  },
-  navOpen: {
-    flexDirection: "column",
-    position: "fixed",
-    top: "0",
-    left: "-250px",
-    width: "200px",
-    height: "100vh",
-    backgroundColor: "#111",
-    paddingTop: "60px",
-    transition: "0.3s",
-  },
 };
 
 // ✅ **Ensure Smooth Scrolling**
