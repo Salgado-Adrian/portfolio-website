@@ -74,4 +74,146 @@
       visibility: hidden;
     }
   }
+  /* ✅ Mobile Navbar */
+@media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; /* Ensures full width */
+      height: 100vh; /* Ensures full height */
+      background-color: #111;
+      padding-top: 60px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%); /* Initially hidden */
+      z-index: 1200; /* Ensures it appears above everything */
+    }
+  
+    .nav-open {
+      transform: translateX(0); /* Slide in */
+    }
+  
+    .nav-closed {
+      transform: translateX(-100%); /* Slide out */
+    }
+  }
+  /* ✅ Navbar Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* ✅ Mobile Menu Button (Opens the Menu) */
+  .menu-button {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+  }
+  
+  .icon {
+    font-size: 28px;
+  }
+  
+  /* ✅ Close Button inside the Menu */
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* ✅ Desktop Navbar */
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* ✅ Mobile Navbar */
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+  
+    .nav {
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #111;
+      padding-top: 60px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+      z-index: 1200;
+    }
+  
+    .nav-open {
+      transform: translateX(0);
+    }
+  
+    .nav-closed {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* ✅ Close Button inside the Menu */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Hide by default */
+  }
+  
+  /* ✅ Mobile Navbar */
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+  
+    .close-button {
+      display: block; /* Show close button on mobile */
+    }
+  
+    .nav {
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #111;
+      padding-top: 60px;
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+      z-index: 1200;
+    }
+  
+    .nav-open {
+      transform: translateX(0);
+    }
+  
+    .nav-closed {
+      transform: translateX(-100%);
+    }
+  }
   

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./Header.css";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./Header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // ✅ Update Mobile State on Resize
+  // ✅ Detect screen size changes to update mobile state
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
@@ -16,15 +16,22 @@ const Header = () => {
 
   return (
     <header className="header">
-      {/* ✅ Mobile Menu Button */}
+      {/* ✅ Mobile Menu Button (Opens the Menu) */}
       {isMobile && (
-        <div className="menu-button" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <FaTimes className="icon" /> : <FaBars className="icon" />}
+        <div className="menu-button" onClick={() => setIsOpen(true)}>
+          <FaBars className="icon" />
         </div>
       )}
 
       {/* ✅ Navbar */}
       <nav className={`nav ${isOpen ? "nav-open" : "nav-closed"}`}>
+        {/* ✅ Close Button (Only Visible on Mobile) */}
+        {isMobile && (
+          <div className="close-button" onClick={() => setIsOpen(false)}>
+            <FaTimes className="icon" />
+          </div>
+        )}
+
         {["Home", "About", "Projects", "Contact"].map((section) => (
           <motion.button
             key={section}
@@ -32,7 +39,7 @@ const Header = () => {
             whileTap={{ scale: 0.9 }}
             onClick={() => {
               scrollToSection(section.toLowerCase());
-              setIsOpen(false); // Close menu on mobile after clicking
+              setIsOpen(false);
             }}
             className="nav-button"
           >
@@ -44,7 +51,7 @@ const Header = () => {
   );
 };
 
-// ✅ **Ensure Smooth Scrolling**
+// ✅ Smooth Scrolling
 const scrollToSection = (id) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 };
