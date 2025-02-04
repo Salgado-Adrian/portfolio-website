@@ -1,57 +1,136 @@
 @import '@fontsource/montserrat';
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-body {
-  background-color: #ffffff; /* White Background */
-  color: #000000; /* Default Black Text */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
 
-#root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.section {
-  min-height: 100vh; /* Makes each section full screen */
-  padding-top: 100px; /* Adjust space so the navbar doesn't overlap */
-}
+/* ✅ Global Styles */
 html, body {
+  width: 100%;
   height: auto;
   min-height: 100vh;
-  overflow-y: auto;
   margin: 0;
   padding: 0;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212; /* Dark Background */
+  color: #ffffff; /* White Text */
   scroll-behavior: smooth;
 }
 
+/* ✅ Ensure full-page scrolling */
+html, body {
+  overflow-y: auto;
+}
 
+/* ✅ Navbar Styling */
+nav {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e1e1e; /* Dark Navbar */
+  padding: 12px 24px;
+  border-radius: 12px;
+  z-index: 1000;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ✅ Logo Styling */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff5252; /* Red Logo */
+  margin-right: 20px;
+}
+
+/* ✅ Navbar Links */
+nav a {
+  text-decoration: none;
+  color: #ffffff; /* White Text */
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #ff5252; /* Red Hover Effect */
+}
+
+/* ✅ Code Formatting */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* ✅ Sections Styling */
+.section {
+  width: 90%;
+  max-width: 900px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 60px 15px;
+  background-color: #1e1e1e; /* Darker Section Background */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  color: #ffffff; /* White Text for all Sections */
+}
+
+/* ✅ Headings & Text */
 h1, h2, h3, h4, h5, h6 {
-  color: #008000; /* Green Headers */
+  color: #ffffff; /* White Headers */
 }
 
 p, span, li {
-  color: #000000; /* Black Regular Text */
+  color: #ffffff; /* White Text */
 }
 
+/* ✅ Links */
 a {
-  color: #008000; /* Green Links */
+  color: #ff5252; /* Red Links */
   text-decoration: none;
 }
 
 a:hover {
-  color: #006400; /* Darker Green on Hover */
+  color: #ff1744; /* Darker Red */
 }
 
+/* ✅ Buttons */
+button, .btn {
+  background-color: #ff5252; /* Red Buttons */
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover, .btn:hover {
+  background-color: #ff1744; /* Darker Red */
+}
+
+/* ✅ Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 40px 10px;
+    background-color: #1a1a1a; /* Slightly lighter dark mode */
+  }
+
+  button, .btn {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav a {
+    padding: 8px 12px;
+  }
+}

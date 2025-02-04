@@ -51,9 +51,18 @@ const styles = {
   },
   section: {
     textAlign: "center",
-    padding: "80px 20px", // ✅ Increase Padding to Avoid Overlapping
+    padding: "80px 20px",
     maxWidth: "800px",
     margin: "auto",
+  },
+  aboutText: {
+    color: "#006400", // Dark Green for About Me
+  },
+  projectsText: {
+    color: "#B22222", // Dark Red for Projects
+  },
+  contactText: {
+    color: "#1E3A8A", // Dark Blue for Contact
   },
 };
 
