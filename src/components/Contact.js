@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"; // Import Icons
 
 const Contact = () => {
   return (
@@ -8,14 +9,24 @@ const Contact = () => {
         Feel free to reach out for collaborations, job opportunities, or just to connect!
       </p>
       <div style={styles.linksContainer}>
-        <a href="https://www.linkedin.com/in/adrian--salgado" target="_blank" rel="noopener noreferrer" style={styles.button}>
-          LinkedIn
+        <a
+          href="https://www.linkedin.com/in/adrian--salgado"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={styles.button}
+        >
+          <FaLinkedin size={24} />
         </a>
-        <a href="https://github.com/Salgado-Adrian" target="_blank" rel="noopener noreferrer" style={styles.button}>
-          GitHub
+        <a
+          href="https://github.com/Salgado-Adrian"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={styles.button}
+        >
+          <FaGithub size={24} />
         </a>
         <a href="mailto:Adrians12099@gmail.com" style={styles.button}>
-          Email Me
+          <FaEnvelope size={24} />
         </a>
       </div>
     </section>
@@ -26,10 +37,10 @@ const styles = {
   container: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-end", // Moves content to the bottom
+    justifyContent: "flex-end",
     alignItems: "center",
     textAlign: "center",
-    height: "80vh", // Adjusts height so the section is not too long
+    height: "80vh",
     padding: "50px 20px",
     margin: "auto",
   },
@@ -49,13 +60,19 @@ const styles = {
     gap: "15px",
   },
   button: {
-    padding: "10px 20px",
+    padding: "10px",
     border: "2px solid #ff4d4d",
     color: "#ff4d4d",
     fontWeight: "bold",
     textDecoration: "none",
     borderRadius: "5px",
     transition: "0.3s",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "50px", // Make buttons square
+    height: "50px",
+    fontSize: "24px",
   },
 };
 
