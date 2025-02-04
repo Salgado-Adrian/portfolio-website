@@ -1,4 +1,5 @@
 import React from "react";
+import "./Contact.css";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa"; // Import Icons
 
 const Contact = () => {
@@ -13,7 +14,7 @@ const Contact = () => {
           href="https://www.linkedin.com/in/adrian--salgado"
           target="_blank"
           rel="noopener noreferrer"
-          style={styles.button}
+          className="icon-button linkedin"
         >
           <FaLinkedin size={24} />
         </a>
@@ -21,11 +22,11 @@ const Contact = () => {
           href="https://github.com/Salgado-Adrian"
           target="_blank"
           rel="noopener noreferrer"
-          style={styles.button}
+          className="icon-button github"
         >
           <FaGithub size={24} />
         </a>
-        <a href="mailto:Adrians12099@gmail.com" style={styles.button}>
+        <a href="mailto:Adrians12099@gmail.com" className="icon-button email">
           <FaEnvelope size={24} />
         </a>
       </div>
@@ -58,21 +59,6 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     gap: "15px",
-  },
-  button: {
-    padding: "10px",
-    border: "2px solid #ff4d4d",
-    color: "#ff4d4d",
-    fontWeight: "bold",
-    textDecoration: "none",
-    borderRadius: "5px",
-    transition: "0.3s",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "50px", // Make buttons square
-    height: "50px",
-    fontSize: "24px",
   },
 };
 
