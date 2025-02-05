@@ -12,10 +12,6 @@ html, body {
   background-color: #121212; /* Dark Background */
   color: #ffffff; /* White Text */
   scroll-behavior: smooth;
-}
-
-/* ✅ Ensure full-page scrolling */
-html, body {
   overflow-y: auto;
 }
 
@@ -56,11 +52,6 @@ nav a:hover {
   color: #ff5252; /* Red Hover Effect */
 }
 
-/* ✅ Code Formatting */
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 /* ✅ Sections Styling */
 .section {
   width: 90%;
@@ -72,6 +63,7 @@ code {
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   color: #ffffff; /* White Text for all Sections */
+  text-align: center;
 }
 
 /* ✅ Headings & Text */
@@ -102,6 +94,7 @@ button, .btn {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  transition: background 0.3s ease-in-out;
 }
 
 button:hover, .btn:hover {

@@ -1,11 +1,27 @@
-.about-container {
+/* ✅ About Section */
+.about-section {
     text-align: center;
-    padding: 50px;
-    margin-top: -80px; /* ⬅️ Reduce gap */
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    min-height: 100vh;
   }
   
-  .highlight {
-    color: #ff4d4d; /* ✅ Red highlights */
-    font-weight: bold;
+  /* ✅ Fix Scroll Down Arrow Placement */
+  .about-scroll-down {
+    margin-top: 30px; /* Space between text and arrow */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    animation: bounce 2s infinite; /* Keeps the bounce animation */
+  }
+  
+  /* ✅ Hover Effect */
+  .about-scroll-down:hover {
+    transform: scale(1.2);
   }
   
