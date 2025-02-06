@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Home.css"; // Import the styles
 import resumePDF from "../assets/resume.pdf"; // Resume File
-import profilePic from "../assets/profile1.JPG"; // Profile Picture
+import profilePic from "../assets/profile2.JPG"; // Profile Picture
 import { FaChevronDown } from "react-icons/fa"; // Import Scroll-Down Arrow Icon
 
 const scrollToSection = (id) => {
